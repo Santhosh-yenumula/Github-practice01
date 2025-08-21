@@ -3,7 +3,7 @@ name: Hello World Workflow
 on:
   push:               # When workflow runs
     branches:
-      - main          # Runs only when pushing to 'main' branch
+      - workflow_dispatch          # Runs only when pushing to 'main' branch
 
 jobs:
   say-hello:          # Job name
@@ -13,4 +13,6 @@ jobs:
         uses: actions/checkout@v3   # Pulls your repo into the VM
 
       - name: Print greeting
-        run: echo "👋 Hello, GitHub Actions is running!"
+        run: |
+            echo "👋 Hello, GitHub Actions is running!"
+            echo "testing 123"
